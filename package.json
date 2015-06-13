@@ -1,0 +1,34 @@
+{
+  "name": "weather-alt",
+  "version": "1.0.0",
+  "description": "A Isomorphic Flux app using AltJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.5.4",
+    "babel-loader": "^5.1.4",
+    "css-loader": "^0.14.4",
+    "json-loader": "^0.5.2",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "mocha": "^2.2.5",
+    "node-libs-browser": "^0.5.2",
+    "react-hot-loader": "^1.2.7",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
+  },
+  "dependencies": {
+    "alt": "^0.16.7",
+    "babel-runtime": "^5.5.6",
+    "express": "^4.12.4",
+    "isomorphic-fetch": "^2.1.0",
+    "leaflet": "^0.7.3",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
+  }
+}
