@@ -2,12 +2,14 @@ class WeatherStore {
 	constructor() {
 		this.bindActions(this.alt.getActions('weather'));
 
-		this.zipCode = '94122';
+		this.currentDay = 0;
 		this.data = {};
 	}
 
-	onChangeZip(z) {
-		console.log(z + '!!!!');
+	dataSuccess(resp) {
+		this.setState({
+			data: resp
+		});
 	}
 }
 

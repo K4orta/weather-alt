@@ -8,13 +8,130 @@ body {
 	font-family: 'Roboto';
 }
 
+ul {
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
 .page {
 	height: 100%;
 	position: relative;
 }
 
-#map {
+//-----------------------\\
+//	Weather Overlay
+//-----------------------\\
+
+.overlay {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	transform: translate3D(0, 15%, 0);
+	transition: transform .25s ease-out, opacity .25s;
+	opacity: 0;
+}
+
+.overlay.loaded {
+	transform: translate3D(0,0,0);
+	opacity: 1;
+}
+
+.forecast-list {
+	text-align: center;
+}
+
+//-----------------------\\
+//	Day Styles
+//-----------------------\\
+
+.day {
+	margin: .5rem;
+	padding: 1rem;
+	background-color: #E5E5E5;
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	font-weight: bold;
+	transition: transform .25s ease, background-color .4s ease;
+	pointer-events: auto;
+	width: 8.4375rem;
+}
+
+.day:hover {
+	transform: translate3D(0, -1.3rem, 0);
+	background-color: white;
+}
+
+.day.is-selected {
+	background-color: white; 
+}
+
+.day:after {
+	content: '';
+	position: absolute;
+	top: -6px;
+	left: -6px;
+	bottom: -6px;
+	right: -6px;
+	transition: border .2s ease-out;
+	border: 0px solid white;
+}
+
+.day.is-selected:after {
+	border: 3px solid white;
+}
+
+.day__icon {
+	line-height: 2;
+	font-size: 2rem;
+}
+
+.day__temp__unit {
+	font-size: 1.2rem;
+}
+
+//-----------------------\\
+//	Leaflet Map
+//-----------------------\\
+
+.map {
 	position: absolute;
 	height: 100%;
 	width: 100%;
+	cursor: default;
+	background: #111;
+	z-index: 1;
+}
+
+.leaflet-bar a:first-child,
+.leaflet-bar a:last-child {
+	border-radius: 0;
+}
+
+.leaflet-control-attribution {
+	display: none;
+}
+
+.leaflet-bottom .leaflet-control {
+	margin-bottom: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+.custom-icon {
+	margin-top: -6px;
+	background-color: blue;
+	 width: 0;
+	  height: 0;
+	  border-left: 70px solid transparent;
+	  border-right: 70px solid transparent;
+	  border-top: 100px solid red;
+	  -moz-border-radius: 50%;
+	  -webkit-border-radius: 50%;
+	  border-radius: 50%;
 }

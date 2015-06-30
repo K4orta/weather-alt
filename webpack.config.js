@@ -2,6 +2,9 @@
 
 var webpack = require('webpack');
 var path = require('path');
+// var serv = require('./server');
+
+// serv();
 
 module.exports = {
 	devtool: 'inline-source-map',

@@ -6,6 +6,9 @@ class Flux extends Alt {
 
 		this.addActions('weather', require('../actions/weather-actions'));
 		this.addStore('weather', require('../stores/weather-store'));
+
+		this.addActions('location', require('../actions/location-actions'));
+		this.addStore('location', require('../stores/location-store'));
 	}
 };
 

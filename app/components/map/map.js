@@ -2,8 +2,9 @@ import React from 'react';
 import L from 'leaflet';
 
 export default class Map extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		props.onClick = props.onClick || function() {};
+		super(props);
 	}
 
 	componentDidMount() {
@@ -14,14 +15,17 @@ export default class Map extends React.Component {
 		    id: 'esywong.knhb5lop',
 		    accessToken: 'pk.eyJ1IjoiZXN5d29uZyIsImEiOiJ1NDRVelhzIn0.xoeElIZkx4qclq5ihnzZvw'
 		}).addTo(this.map);
+
 		new L.Control.Zoom({ position: 'bottomright' }).addTo(this.map);
 
-		this.map.setView([37.7816579, -122.4045532], 13);
+		// let marker = L.marker([37.7816579, -122.4045532]).addTo(this.map);
+		this.map.setView([37.7816579, -122.4045532], 6);
+		this.map.on('click', this.props.onClick);
 	}
 
 	render() {
 		return (
-			<div id="map"></div>
+			<div id='map' className='map'></div>
 		);
 	}
 };
