@@ -18,9 +18,16 @@ export default class Map extends React.Component {
 
 		new L.Control.Zoom({ position: 'bottomright' }).addTo(this.map);
 
-		// let marker = L.marker([37.7816579, -122.4045532]).addTo(this.map);
 		this.map.setView([37.7816579, -122.4045532], 6);
 		this.map.on('click', this.props.onClick);
+	}
+
+	componentWillReceiveProps(props) {
+		if (this.mapMarker == undefined) {
+			this.mapMarker = L.marker([props.location.lat, props.location.lng]).addTo(this.map);
+		} else {
+			this.mapMarker.setLatLng([props.location.lat, props.location.lng]);
+		}
 	}
 
 	render() {

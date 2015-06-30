@@ -11,6 +11,12 @@ class WeatherStore {
 			data: resp
 		});
 	}
+
+	changeDay(day) {
+		this.setState({
+			currentDay: day
+		});
+	}
 }
 
 export default WeatherStore;

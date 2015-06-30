@@ -8,11 +8,13 @@ export default class Layout extends React.Component {
 	render() {
 		return (
 			<div className='page'>
-				<Map onClick={this._clickMap.bind(this)} />
-				<AltContainer store={this.props.flux.getStore('weather')} flux={this.props.flux}>
-					<WeatherOverlay />
+				<AltContainer store={this.props.flux.getStore('location')} flux={this.props.flux}>
+					<Map onClick={this._clickMap.bind(this)} />
 				</AltContainer>
-			</div>	
+				<AltContainer store={this.props.flux.getStore('weather')} flux={this.props.flux}>
+					<WeatherOverlay onClick={this._clickDay.bind(this)} />
+				</AltContainer>
+			</div>
 		);
 	}
 
@@ -22,6 +24,6 @@ export default class Layout extends React.Component {
 	}
 
 	_clickDay(e) {
-
+		this.props.flux.getActions('weather').changeDay(parseInt(e.currentTarget.dataset.key));
 	}
 }

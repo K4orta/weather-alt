@@ -11,9 +11,9 @@ export default class DayDetail extends React.Component {
 			<div className='day-detail'>
 				<h1>{date}</h1>
 				<h3>{this.props.day.summary}</h3>
-				<div>Wind Speed: {this.props.day.windSpeed}mph</div>
-				<div>Sunrise: {sunrise}</div>
-				<div>Sunset: {sunset}</div>
+				<div className='day-detail__stat'>Wind Speed: {this.props.day.windSpeed}mph</div>
+				<div className='day-detail__stat'>Sunrise: {sunrise}</div>
+				<div className='day-detail__stat'>Sunset: {sunset}</div>
 			</div>
 		);
 	}

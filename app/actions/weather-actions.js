@@ -3,7 +3,8 @@ import weatherLoader from '../utils/weather-loader';
 class WeatherActions {
 	constructor() {
 		this.generateActions(
-			'dataSuccess'
+			'dataSuccess',
+			'changeDay'
 		);
 	}
 

@@ -9,7 +9,7 @@ export default class WeaterListDay extends React.Component {
 		let {temperatureMin, temperatureMax} = this.props.weather;
 
 		return (
-			<li className={'day' + (this.props.isSelected ? ' is-selected' : '')} onClick={this.props.dayClick} data-key={this.props.dayNum}>
+			<li className={'day' + (this.props.isSelected ? ' is-selected' : '')} onClick={this.props.onClick} data-key={this.props.dayNum}>
 				<div className='day__label'>{weekDay}</div>
 				<div className={'day__icon wi wi-'+ icon}></div>
 				<div className='day__temp'>
